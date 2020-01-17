@@ -1,4 +1,4 @@
-package com.liang.user;
+package com.liang.user.controller;
 
 /**
  * @author liangyehao
