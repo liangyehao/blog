@@ -12,7 +12,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @author liangyehao
  * @version 1.0
  * @date 2020/1/17 21:16
- * @Content 用户资源库实现类
+ * @content 用户资源库实现类
  */
 public class UserRepositoryImpl implements UserRepository {
     //存储用户信息
