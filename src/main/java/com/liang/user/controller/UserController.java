@@ -16,9 +16,18 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/users")
 public class UserController {
 
+    /**
+     * 查询用户资源库
+     */
     @Autowired
     private UserRepository userRepository;
 
+    /**
+     * 用户列表接口
+     *
+     * @param model 视图
+     * @return list页面
+     */
     @GetMapping
     public ModelAndView userList(Model model) {
         model.addAttribute("userList", userRepository.findUserList());
@@ -26,6 +35,11 @@ public class UserController {
         return new ModelAndView("user/list", "userModel", model);
     }
 
+    /**
+     * @param id    用户id
+     * @param model 视图
+     * @return view页面
+     */
     @GetMapping("/{id}")
     public ModelAndView findUserById(@PathVariable("id") Long id, Model model) {
         model.addAttribute("user", userRepository.findUser(id));
@@ -33,6 +47,11 @@ public class UserController {
         return new ModelAndView("user/view", "userModel", model);
     }
 
+    /**
+     * @param id    用户主键
+     * @param model 视图
+     * @return form页面
+     */
     @GetMapping("/modify/{id}")
     public ModelAndView creatForm(@PathVariable("id") Long id, Model model) {
         model.addAttribute("user", userRepository.findUser(id));
@@ -40,6 +59,11 @@ public class UserController {
         return new ModelAndView("user/form", "userModel", model);
     }
 
+    /**
+     * @param user  需要保存或更新的用户实体
+     * @param model 视图
+     * @return list页面
+     */
     @PostMapping
     public ModelAndView saveOrUpdateUser(User user, Model model) {
         model.addAttribute("user", userRepository.saveOrUpdateUser(user));
@@ -47,6 +71,12 @@ public class UserController {
         return new ModelAndView("redirect:/users", "userModel", model);
     }
 
+    /**
+     *
+     * @param id 用户id
+     * @param model 视图
+     * @return list页面
+     */
     @GetMapping("/delete/{id}")
     public ModelAndView deleteUser(@PathVariable("id") Long id, Model model) {
         userRepository.deleteUser(id);
@@ -54,8 +84,13 @@ public class UserController {
         return new ModelAndView("redirect:/users", "userModel", model);
     }
 
+    /**
+     *
+     * @param model 视图
+     * @return form页面
+     */
     @GetMapping("/create")
-    public ModelAndView createForm(User user, Model model) {
+    public ModelAndView createForm(Model model) {
         model.addAttribute("user", new User());
         model.addAttribute("title", "创建新用户");
         return new ModelAndView("user/form", "userModel", model);
