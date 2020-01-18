@@ -17,10 +17,14 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 @Repository
 public class UserRepositoryImpl implements UserRepository {
-    //存储用户信息
+    /**
+     * 存储用户信息
+     */
     private static ConcurrentHashMap<Long, User> userMap = new ConcurrentHashMap<>();
 
-    //id自增工具类
+    /**
+     * id自增工具类
+     */
     private static AtomicInteger count = new AtomicInteger();
 
     public UserRepositoryImpl() {
