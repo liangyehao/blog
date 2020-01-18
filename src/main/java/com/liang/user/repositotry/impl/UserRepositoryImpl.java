@@ -2,6 +2,7 @@ package com.liang.user.repositotry.impl;
 
 import com.liang.user.domain.User;
 import com.liang.user.repositotry.UserRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,9 +15,10 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @date 2020/1/17 21:16
  * @content 用户资源库实现类
  */
+@Repository
 public class UserRepositoryImpl implements UserRepository {
     //存储用户信息
-    private ConcurrentHashMap<Long, User> userMap = new ConcurrentHashMap<>();
+    private static ConcurrentHashMap<Long, User> userMap = new ConcurrentHashMap<>();
 
     //id自增工具类
     private static AtomicInteger count = new AtomicInteger();
