@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:fragment="header">
+    <h3 th:text="${userModel.title}">header</h3>
+    <a th:href="@{/users}">首页</a>
+    <br/>
+</div>
+</body>
+</html>

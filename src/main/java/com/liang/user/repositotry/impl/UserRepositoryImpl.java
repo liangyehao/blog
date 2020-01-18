@@ -23,6 +23,11 @@ public class UserRepositoryImpl implements UserRepository {
     //id自增工具类
     private static AtomicInteger count = new AtomicInteger();
 
+    public UserRepositoryImpl() {
+        User user = new User("Liang Yehao", "123456", "1094311509@qq.com");
+        this.saveOrUpdateUser(user);
+    }
+
     /**
      * 查询所有用户
      *
