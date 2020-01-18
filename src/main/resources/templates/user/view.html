@@ -11,6 +11,8 @@
     <p><strong>用户名：</strong><span th:text="*{name}"></span></p>
     <p><strong>密码：</strong><span th:text="*{password}"></span></p>
     <p><strong>邮箱：</strong><span th:text="*{email}"></span></p>
+    <a th:href="@{'/users/modify/'+${id}}">修改</a>
+    <a th:href="@{'/users/delete/'+${id}}">删除</a>
 </div>
 <div th:replace="fragments/footer::footer"></div>
 </body>
