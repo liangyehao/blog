@@ -21,6 +21,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-data-elasticsearch'
 	runtimeClasspath group: 'com.h2database', name: 'h2', version: '1.4.200'
 	compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.18'
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
