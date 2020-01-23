@@ -1,14 +1,25 @@
 <!DOCTYPE html>
-<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<html lang="zh" th:fragment="header" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <title th:text="${userModel.title}">Title</title>
+    <!-- Bootstrap core CSS -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles -->
+    <link href="../../css/blog.css" rel="stylesheet">
 </head>
 <body>
-<div th:fragment="header">
-    <h3 th:text="${userModel.title}">header</h3>
-    <a th:href="@{/users}">首页</a>
-    <br/>
+<div class="blog-masthead">
+    <div class="container">
+        <div class="row">
+            <h1>博客系统</h1>
+            <nav class="nav">
+                <a class="nav-link active" th:href="@{/users}">首页</a>
+                <a class="nav-link" th:href="@{/users/create}">其他</a>
+            </nav>
+        </div>
+    </div>
 </div>
 </body>
 </html>
