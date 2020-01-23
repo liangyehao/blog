@@ -10,3 +10,7 @@
 #####(8)在(7)中的cmd窗口继续输入`alter user 'root'@'localhost' identified by '这里改成自己的新密码';`修改密码。此时密码已经修改成功。
 #####(9)把前面两个cmd窗口关闭，然后电脑中找到C:\Windows\System32\cmd.exe，右键->以管理员身份运行，执行`net start mysql`启动mysql服务即可。
                                                                            
+###2、引用静态文件
+##### 需要定位到resource目录下
+`<link href="../../css/bootstrap.min.css" rel="stylesheet">`
+`<script src="../../js/bootstrap.min.js"></script>`
