@@ -1,32 +1,53 @@
 <!DOCTYPE html>
 <html lang="zh" xmlns:th="http://www.thymeleaf.org">
-<head>
+<head th:replace="fragments/header::header">
     <meta charset="UTF-8">
-    <title th:text="${userModel.title}">Title</title>
+    <title>Title</title>
 </head>
 <body>
-<div th:replace="fragments/header::header"></div>
-<br/>
-<div th:object="${userModel.user}">
-    <form method="post" th:action="@{/users}">
-        <input th:name="id" th:value="*{id}" type="hidden">
-        <strong>用户名：</strong>
-        <label>
-            <input th:name="name" th:value="*{name}">
-        </label><br/><br/>
-        <strong>密&nbsp;码：</strong>
-        <label>
-            <input th:name="password" th:value="*{password}">
-        </label><br/><br/>
-        <strong>邮&nbsp;箱：</strong>
-        <label>
-            <input th:name="email" th:value="*{email}">
-        </label><br/><br/>
-        <label>
-            <input th:type="submit" th:value="提交">
-        </label>
-    </form>
+<div class="container">
+    <div class="row">
+        <h2 th:text="${userModel.title}"></h2>
+    </div>
+    <div class="row" th:object="${userModel.user}">
+        <form method="post" th:action="@{/users}">
+            <input th:name="id" th:value="*{id}" type="hidden">
+            <div class="form-group">
+                <label>用户名：</label><label><input class="form-control" th:name="name" th:value="*{name}"/></label>
+            </div>
+            <div class="form-group">
+                <label>密码：</label><label><input class="form-control" th:name="password" th:value="*{password}"/></label>
+            </div>
+            <div class="form-group">
+                <label>邮箱：</label><label><input class="form-control" th:name="email" th:value="*{email}"/></label>
+            </div>
+            <div class="form-group">
+                <label><input class="btn btn-primary" th:type="submit" th:value="提交"></label>
+            </div>
+        </form>
+    </div>
 </div>
+
+<!--
+
+<strong>用户名：</strong>
+            <label>
+                <input th:name="name" th:value="*{name}">
+            </label><br/><br/>
+            <strong>密&nbsp;码：</strong>
+            <label>
+                <input th:name="password" th:value="*{password}">
+            </label><br/><br/>
+            <strong>邮&nbsp;箱：</strong>
+            <label>
+                <input th:name="email" th:value="*{email}">
+            </label><br/><br/>
+            <label>
+                <input th:type="submit" th:value="提交">
+            </label>
+
+-->
+
 <div th:replace="fragments/footer::footer"></div>
 </body>
 </html>
