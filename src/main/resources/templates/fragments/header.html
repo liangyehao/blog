@@ -10,16 +10,30 @@
     <link href="../../css/blog.css" rel="stylesheet">
 </head>
 <body>
-<div class="blog-masthead">
-    <div class="container">
-        <div class="row">
-            <h1>博客系统<small>lyeh</small></h1>
-            <nav class="nav">
-                <a class="nav-link active" th:href="@{/users}">首页</a>
-                <a class="nav-link" th:href="@{/users/create}">其他</a>
-            </nav>
+<div class="blog-nav">
+    <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+        <button aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"
+                class="navbar-toggler navbar-toggler-right" data-target="#navbarCollapse" data-toggle="collapse"
+                type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="#" th:href="@{/}">博客系统<small>lyeh</small></a>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#" th:href="@{/}">首页<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" th:href="@{/users}">用户管理</a>
+                </li>
+            </ul>
+            <form class="form-inline mt-2 mt-md-0">
+                <input class="form-control mr-sm-2" placeholder="请输入" type="text">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">搜索</button>
+            </form>
         </div>
-    </div>
+    </nav>
 </div>
+
 </body>
 </html>
